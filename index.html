@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saad Awais, Full Stack AI Engineer</title>
+<meta name="description" content="Saad Awais is a full stack AI engineer in Dubai with 6+ years building production apps in TypeScript, React, Vue 3, Node.js and NestJS. Currently building on TAMM, Abu Dhabi's government services portal.">
+<meta property="og:title" content="Saad Awais, Full Stack AI Engineer">
+<meta property="og:description" content="6+ years shipping production apps in TypeScript, React, Vue 3, Node.js and NestJS. Currently building on TAMM in Abu Dhabi.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230F5E63'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='700' font-size='15' fill='white' text-anchor='middle'%3ESA%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #EEF3F2;
+    --surface: #FFFFFF;
+    --ink: #13252B;
+    --muted: #55686E;
+    --line: #C9D6D4;
+    --teal: #0F5E63;
+    --teal-soft: #D5E7E5;
+    --signal: #D99A00;
+    --display: "Bricolage Grotesque", "Segoe UI", sans-serif;
+    --body: "IBM Plex Sans", "Segoe UI", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0F1C20;
+      --surface: #162A30;
+      --ink: #E4EEEC;
+      --muted: #93A8AC;
+      --line: #2A4249;
+      --teal: #5FC2BE;
+      --teal-soft: #1C3A3F;
+      --signal: #F2B630;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0F1C20;
+    --surface: #162A30;
+    --ink: #E4EEEC;
+    --muted: #93A8AC;
+    --line: #2A4249;
+    --teal: #5FC2BE;
+    --teal-soft: #1C3A3F;
+    --signal: #F2B630;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--teal); text-underline-offset: 3px; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  header.site {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 22px 0;
+  }
+  .mark {
+    font-family: var(--display); font-weight: 700; font-size: 18px;
+    color: var(--ink); text-decoration: none;
+  }
+  nav.links { display: flex; gap: 22px; }
+  nav.links a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: 15px; }
+  nav.links a:hover { color: var(--ink); }
+
+  /* Hero */
+  .hero { padding: 72px 0 64px; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(52px, 11vw, 128px);
+    line-height: 0.92;
+    letter-spacing: -0.035em;
+    margin: 0 0 28px;
+  }
+  .hero .lede {
+    font-size: clamp(19px, 2.4vw, 24px);
+    line-height: 1.45;
+    max-width: 30em;
+    margin: 0 0 28px;
+  }
+  .now {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 15px; color: var(--muted);
+    margin-bottom: 32px;
+  }
+  .now .dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: var(--signal);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--signal) 25%, transparent);
+  }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    display: inline-block; padding: 12px 20px; border-radius: 10px;
+    font-weight: 600; font-size: 15px; text-decoration: none;
+    border: 1.5px solid var(--teal);
+  }
+  .btn.primary { background: var(--teal); color: var(--bg); }
+  .btn.ghost { color: var(--teal); }
+  .btn:hover { filter: brightness(1.08); }
+
+  /* Sections */
+  section.block { padding: 56px 0; border-top: 1px solid var(--line); }
+  .block-head { display: grid; grid-template-columns: 220px 1fr; gap: 32px; }
+  .block-head h2 {
+    font-family: var(--display); font-weight: 700;
+    font-size: 26px; line-height: 1.2; margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .block-head .note { color: var(--muted); font-size: 15px; margin: 8px 0 0; max-width: 16em; }
+
+  /* Commit-graph timeline */
+  .graph { list-style: none; margin: 0; padding: 0; position: relative; }
+  .graph::before {
+    content: ""; position: absolute; left: 9px; top: 10px; bottom: 10px;
+    width: 2px; background: var(--teal);
+    transform-origin: top;
+    animation: draw 1.2s ease-out both;
+  }
+  @keyframes draw { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  .commit { position: relative; padding: 0 0 40px 44px; }
+  .commit:last-child { padding-bottom: 0; }
+  .commit::before {
+    content: ""; position: absolute; left: 2px; top: 6px;
+    width: 16px; height: 16px; border-radius: 50%;
+    background: var(--bg); border: 3px solid var(--teal);
+  }
+  .commit.head::before { background: var(--signal); border-color: var(--signal); }
+  .commit.branch { padding-left: 76px; }
+  .commit.branch::before { left: 34px; border-color: var(--muted); }
+  .commit.branch::after {
+    content: ""; position: absolute; left: 10px; top: -14px;
+    width: 30px; height: 28px;
+    border-left: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    border-bottom-left-radius: 18px;
+  }
+  .role { font-family: var(--display); font-weight: 700; font-size: 21px; line-height: 1.25; margin: 0; }
+  .org { color: var(--teal); font-weight: 600; }
+  .when { color: var(--muted); font-size: 14px; margin: 4px 0 10px; }
+  .commit ul { margin: 0; padding-left: 18px; max-width: 40em; }
+  .commit li { margin: 4px 0; }
+  .commit p.solo { margin: 0; max-width: 40em; }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .project {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .project.lead { grid-column: 1 / -1; border-left: 5px solid var(--signal); }
+  .project h3 { font-family: var(--display); font-weight: 700; font-size: 20px; margin: 0 0 8px; }
+  .project p { margin: 0 0 14px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 0; margin: 0; list-style: none; }
+  .tags li {
+    background: var(--teal-soft); color: var(--ink);
+    font-size: 13px; padding: 3px 10px; border-radius: 999px;
+  }
+
+  /* Stack */
+  .stack { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 32px; margin: 0; }
+  .stack dt { font-weight: 600; margin: 0 0 2px; }
+  .stack dd { margin: 0; color: var(--muted); }
+
+  /* Contact */
+  .contact h2 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(36px, 6vw, 64px); line-height: 1; letter-spacing: -0.03em;
+    margin: 0 0 18px;
+  }
+  .contact p { max-width: 32em; margin: 0 0 26px; font-size: 19px; }
+  footer { padding: 40px 0 48px; color: var(--muted); font-size: 14px; }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .wrap { padding: 0 16px; }
+    nav.links { gap: 14px; }
+    nav.links a.hide-sm { display: none; }
+    .hero { padding: 40px 0 48px; }
+    .block-head { grid-template-columns: 1fr; gap: 20px; }
+    .projects, .stack { grid-template-columns: 1fr; }
+    .commit { padding-left: 38px; }
+    .commit.branch { padding-left: 66px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .graph::before { animation: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="mark" href="#top">Saad Awais</a>
+    <nav class="links" aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#projects">Projects</a>
+      <a class="hide-sm" href="#stack">Stack</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Saad<br>Awais</h1>
+      <p class="lede">Full stack AI engineer. I build and scale production web apps in TypeScript, React, Vue 3, Node.js and NestJS, and I've been shipping them for 6+ years.</p>
+      <div class="now"><span class="dot" aria-hidden="true"></span>Now building TAMM, Abu Dhabi's government services portal</div>
+      <div class="actions">
+        <a class="btn primary" href="mailto:saadawais122@gmail.com">Email me</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/saadawais122" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/saadawais123" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+
+    <section class="block" id="work">
+      <div class="block-head">
+        <div>
+          <h2>Work</h2>
+          <p class="note">Government, fintech, ed-tech and SaaS teams across the UAE, UK and Pakistan.</p>
+        </div>
+        <ol class="graph">
+          <li class="commit head">
+            <h3 class="role">Full Stack Engineer, <span class="org">Department of Municipalities &amp; Transport</span></h3>
+            <p class="when">Sep 2025 to now, Abu Dhabi</p>
+            <ul>
+              <li>Engineer core modules of TAMM, the UAE government portal serving high-traffic citizen services</li>
+              <li>Design and maintain microservices for independent deployments, fault isolation and horizontal scaling</li>
+              <li>Resolve critical production issues on the Incidents team and lead root cause analysis on recurring ones</li>
+              <li>Build REST and event-driven communication between services for low-latency, high-throughput data flow</li>
+            </ul>
+          </li>
+          <li class="commit">
+            <h3 class="role">Senior Software Engineer, <span class="org">Rare Globex</span></h3>
+            <p class="when">May 2024 to Sep 2025, Dubai</p>
+            <ul>
+              <li>Owned full-stack apps end to end (React, Node.js, Fastify), including AWS deployment</li>
+              <li>Scaled TradeX, a trading platform with 3,000+ active users</li>
+              <li>Built GatewayHub, a payment gateway aggregator, from scratch</li>
+              <li>Shipped real-time features with WebSockets and tuned SQL and Redis for heavy load</li>
+            </ul>
+          </li>
+          <li class="commit">
+            <h3 class="role">Senior Backend Developer, <span class="org">Youni</span></h3>
+            <p class="when">Sep 2023 to Apr 2024, London (remote)</p>
+            <ul>
+              <li>Built REST APIs with NestJS and TypeORM, improving system performance by 40%</li>
+              <li>Added Redis and ElastiCache caching and Bull queues for reliability during traffic peaks</li>
+            </ul>
+          </li>
+          <li class="commit">
+            <h3 class="role">Full Stack Engineer, <span class="org">RepairDesk</span></h3>
+            <p class="when">Jan 2023 to Dec 2023</p>
+            <ul>
+              <li>Built and shipped Torque360, a POS for the auto-repair industry, with Stripe, PayPal and QuickBooks</li>
+              <li>Rewrote the RepairDesk web app in Vue 3, Pinia, NestJS and TypeORM</li>
+              <li>Overhauled the ticket module, improving server performance by 50%</li>
+            </ul>
+          </li>
+          <li class="commit">
+            <h3 class="role">Software Engineer, <span class="org">Kwanso</span></h3>
+            <p class="when">Aug 2021 to Jan 2023</p>
+            <ul>
+              <li>Built features for CollegeAdvisor.com, used by thousands of US students</li>
+              <li>Integrated Salesforce for continuous lead and meeting sync</li>
+            </ul>
+          </li>
+          <li class="commit branch">
+            <h3 class="role">React Developer, <span class="org">Royaleggs</span></h3>
+            <p class="when">Nov 2021 to Sep 2022, freelance</p>
+            <p class="solo">Built the front end of a Web3 NFT minting app with React and Ethereum.</p>
+          </li>
+          <li class="commit">
+            <h3 class="role">Associate Software Engineer, <span class="org">Telo Solution</span></h3>
+            <p class="when">Apr 2020 to Aug 2021, Lahore</p>
+            <ul>
+              <li>Built a full Employee Management System with real-time notifications</li>
+              <li>Built the front end of Upcover, an Australian business insurance platform</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="block" id="projects">
+      <div class="block-head">
+        <div>
+          <h2>Projects</h2>
+          <p class="note">Products I built or scaled in production.</p>
+        </div>
+        <div class="projects">
+          <article class="project lead">
+            <h3>TradeX Trading Platform</h3>
+            <p>A trading platform with 3,000+ active users: deposits, withdrawals, real-time transaction tracking and a React CRM for user management and reporting.</p>
+            <ul class="tags"><li>Node.js</li><li>React</li><li>Kysely</li><li>SQL</li><li>Redis</li></ul>
+          </article>
+          <article class="project">
+            <h3>GatewayHub</h3>
+            <p>A payment aggregator that routes transactions across multiple gateways with round-robin load distribution.</p>
+            <ul class="tags"><li>Fastify</li><li>React</li><li>Kysely</li><li>Redis</li></ul>
+          </article>
+          <article class="project">
+            <h3>CollegeAdvisor.com</h3>
+            <p>Student application and advisor-booking platform with continuous Salesforce sync.</p>
+            <ul class="tags"><li>React</li><li>GraphQL</li><li>Node.js</li><li>PostgreSQL</li></ul>
+          </article>
+          <article class="project">
+            <h3>Torque360 POS</h3>
+            <p>Point-of-sale system for auto-repair shops, built from scratch with payment and accounting integrations.</p>
+            <ul class="tags"><li>React</li><li>Node.js</li><li>PostgreSQL</li><li>Stripe</li></ul>
+          </article>
+          <article class="project">
+            <h3>Employee Management System</h3>
+            <p>Role-based access, IP-based login, attendance, shifts, leave and real-time notifications.</p>
+            <ul class="tags"><li>React</li><li>Express</li><li>MongoDB</li><li>Socket.io</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="stack">
+      <div class="block-head">
+        <div>
+          <h2>Stack</h2>
+          <p class="note">What I reach for, and what I've shipped with.</p>
+        </div>
+        <dl class="stack">
+          <div><dt>AI and LLMs</dt><dd>LLMs, RAG, prompt engineering, Claude Code, Cursor</dd></div>
+          <div><dt>Frontend</dt><dd>React, Redux, Vue 3, Pinia, Material UI, Storybook</dd></div>
+          <div><dt>Backend</dt><dd>Node.js, NestJS, Express, Fastify, GraphQL, WebSockets, Bull queues, microservices</dd></div>
+          <div><dt>Data</dt><dd>PostgreSQL, MySQL, MongoDB, Redis, TypeORM, Sequelize, Kysely</dd></div>
+          <div><dt>Cloud and delivery</dt><dd>AWS (EC2, Elastic Beanstalk, Amplify, ElastiCache), CI/CD, Git</dd></div>
+          <div><dt>Testing</dt><dd>Jest, Mocha, Chai, TDD</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="block contact" id="contact">
+      <h2>Let's build something.</h2>
+      <p>I'm open to freelance and contract work. Tell me what you're building and I'll get back to you.</p>
+      <div class="actions">
+        <a class="btn primary" href="mailto:saadawais122@gmail.com">saadawais122@gmail.com</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/saadawais122" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn ghost" href="https://github.com/saadawais123" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>Saad Awais, Dubai, UAE</footer>
+</div>
+</body>
+</html>
